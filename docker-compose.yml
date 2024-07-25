@@ -38,8 +38,10 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
-      - nats
+      progres:
+        condition: service_healthy
+      nats:
+        condition: service_healthy
 
       
 
@@ -59,6 +61,12 @@ services:
       #SCRUMLR_ANALYTICS_SRC: "${ANALYTICS_SRC}"
     ports:
       - "9090:8080"
+    depends_on:
+      progres:
+        condition: service_healthy
+      nats:
+        condition: service_healthy
+  
 
   postgres:
     restart: always
