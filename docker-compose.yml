@@ -79,8 +79,6 @@ services:
     profiles:
       - dev
       - build
-      - progres
-
 
   nats:
     restart: always
