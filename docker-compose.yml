@@ -15,6 +15,7 @@ services:
       SCRUMLR_SERVER_NATS_URL: "${SCRUMLR_SERVER_NATS_URL}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"  # Added this line to ensure DB password is available
       SCRUMLR_SERVER_DATABASE_URL: "postgres://scrumlr:${POSTGRES_PASSWORD}@postgres:5432/scrumlr?sslmode=disable" # Added to fix DB URL
+
       SCRUMLR_PRIVATE_KEY: "${SCRUMLR_PRIVATE_KEY}"
       #SCRUMLR_AUTH_GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID}"
       #SCRUMLR_AUTH_GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET}"
@@ -56,7 +57,7 @@ services:
       #SCRUMLR_ANALYTICS_DATA_DOMAIN: "${ANALYTICS_DATA_DOMAIN}"
       #SCRUMLR_ANALYTICS_SRC: "${ANALYTICS_SRC}"
     ports:
-      - "8080:8080"
+      - "9090:8080"
 
   postgres:
     restart: always
