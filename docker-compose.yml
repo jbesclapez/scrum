@@ -15,6 +15,7 @@ services:
       SCRUMLR_SERVER_NATS_URL: "${SCRUMLR_SERVER_NATS_URL}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"  # Added this line to ensure DB password is available
       SCRUMLR_SERVER_DATABASE_URL: "postgres://scrumlr:${POSTGRES_PASSWORD}@postgres:5432/scrumlr?sslmode=disable" # Added to fix DB URL
+
       SCRUMLR_PRIVATE_KEY: "${SCRUMLR_PRIVATE_KEY}"
       #SCRUMLR_AUTH_GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID}"
       #SCRUMLR_AUTH_GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET}"
@@ -69,11 +70,6 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   nats:
     restart: always
