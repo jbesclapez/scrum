@@ -56,7 +56,7 @@ export const ScrumlrLogo = ({ className }: ScrumlrLogoProps) => {
             y="35"
             fontFamily="'Be Vietnam Pro'"
             fontSize="35"
-            fill="white"
+            fill="#0060b9"
           >
             AIQOS
           </text>
@@ -79,7 +79,7 @@ export const ScrumlrLogo = ({ className }: ScrumlrLogoProps) => {
             y="30"
             fontFamily="'Be Vietnam Pro'"
             fontSize="20"
-            fill="white"
+            fill="#0060b9"
           >
             AIQOS
           </text>
